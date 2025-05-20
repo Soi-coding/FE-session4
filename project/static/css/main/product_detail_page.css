@@ -1,1 +1,258 @@
-/* product detail page - CSS */
+.product-detail-container {
+  display: flex;
+  padding-top: 50px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1051px;
+  margin: 0 auto;
+}
+
+.product-image-container {
+  width: 430px;
+  height: 550px;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  justify-content: space-around;
+}
+
+.product-info-panel-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.delivery-type {
+  color: var(--font-font2, #999);
+
+  /* H3 */
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 133.333% */
+}
+
+.product-title {
+  margin-top: 8px;
+  color: var(--font-font-1, #333);
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -1px;
+}
+
+.discount-info {
+  display: flex;
+  padding: 20px 0 0 0;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.discount-rate {
+  color: #fa622f;
+  font-family: Pretendard;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -1px;
+}
+
+.discount-price {
+  color: #333;
+  font-family: Pretendard;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -1px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #e2e2e2;
+  margin: 20px 0;
+}
+
+.notice-section {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+  flex-direction: row;
+}
+
+.notice-label {
+  color: var(--font-font2, #999);
+
+  /* B2-bold */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -1px;
+  width: 20%;
+}
+
+.notice-text {
+  color: var(--font-font-1, #333);
+
+  /* B2 */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142.857%; /* 142.857% */
+  letter-spacing: -1px;
+  width: 80%;
+}
+
+.select-section {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.select-label {
+  color: var(--font-font2, #999);
+
+  /* B2-bold */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -1px;
+  width: 128px;
+}
+
+.select-option {
+  display: flex;
+  padding: 10px 10px 15px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 0 0;
+  border: 1px solid var(--stroke-stroke-2, #e2e2e2);
+}
+
+.select-option-name {
+  color: var(--font-font2, #999);
+
+  /* B2 */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -1px;
+}
+
+.quantity-control {
+  display: flex;
+  padding: 4px;
+  align-items: flex-start;
+  border-radius: 4px;
+  border: 1px solid var(--stroke-stroke-2, #e2e2e2);
+}
+
+.quantity-control button {
+  color: var(--font-font-1, #333);
+  text-align: center;
+
+  /* B2-bold */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -1px;
+  width: 20px;
+}
+
+.button-number {
+  width: 32px;
+  color: var(--font-font-1, #333);
+  text-align: center;
+
+  /* B2-bold */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -1px;
+}
+
+.payment-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  margin-top: 40px;
+  align-self: stretch;
+}
+
+.total-price-area {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  align-items: flex-end;
+  color: #000;
+}
+
+.total {
+  color: #000;
+
+  /* B2 */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -1px;
+}
+
+.total-price {
+  color: var(--font-font-1, #333);
+  font-family: Pretendard;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 114.286% */
+  letter-spacing: -1px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background: #5e0080;
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}

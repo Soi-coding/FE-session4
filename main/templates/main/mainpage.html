@@ -1,32 +1,120 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<!-- css 파일 -->
+
 <link
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/main/main_page.css'%}"
+  href="{% static 'css/main/main_page.css' %}"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
 
-<!-- 코드 작성시, 아래 부분(script 태그 이전)은 전체 삭제하고 작성하세요 -->
+<div class="main-container">
+  <!-- 상단 카테고리 박스 -->
+  <div class="top-category-box">
+    <div class="top-category">
+      <span class="active">인기신상랭킹</span>
+      <span class="active">입점특가</span>
+      <span class="active">간편한끼</span>
+      <span class="active">요즘간식</span>
+      <span class="active">주방리빙</span>
+      <span class="active">뷰티</span>
+      <span class="active">패션잡화</span>
+    </div>
+  </div>
 
-<!----------------tip!---------------->
-<!-- 상품 데이터베이스는 프로젝트에 넣어뒀어요 -->
-<!-- 아래와 같은 형식으로 for문을 사용하여 작성하세요 -->
+  <div class="content-wrapper">
+    <!-- 필터 영역 -->
+    <div class="filter-area">
+      <div class="filter-header">
+        <span class="filter-style">필터</span>
+        <span class="reset">
+          <img
+            src="{% static 'assets/icons/reset.svg' %}"
+            alt="초기화 아이콘"
+            class="reset-icon"
+          />
+          초기화
+        </span>
+      </div>
+      <div class="filter-category">
+        <div class="category-header">
+          <span>카테고리</span>
+          <img
+            src="{% static 'assets/icons/up.svg' %}"
+            alt="위 아이콘"
+            class="up-icon"
+          />
+        </div>
+        <div class="category-list">
+          <label class="custom-checkbox"
+            ><input type="checkbox" /> 스킨케어·메이크업
+            <span style="margin-left: 5px">68</span></label
+          >
+          <label class="custom-checkbox"
+            ><input type="checkbox" /> 럭셔리뷰티
+            <span style="margin-left: 5px">40</span></label
+          >
+          <label class="custom-checkbox"
+            ><input type="checkbox" /> 간식·과자·떡
+            <span style="margin-left: 5px">28</span></label
+          >
+        </div>
+      </div>
+    </div>
 
-<!-- 데이터 사용 예시 -->
-<div style="display: flex">
-  {% for product in products %}
-  <a href="product/{{product.id}}">
-    <img src="{{product.image_url}}" style="width: 100px" />
-    <p>{{product}}</p>
-    <p>{{product.description}}</p>
-    <p>{{product.origin_price}}원</p>
-    <p>{{product.discount_rate}}%</p>
-    <p>{{product.discount_price}}원</p>
-  </a>
-  {% endfor %}
+    <div class="product-area">
+      <div class="product-header">
+        <span>총 508건</span>
+        <div class="sort-tabs">
+          <span>추천순</span>
+          <span>신상품순</span>
+          <span>판매량순</span>
+          <span>혜택순</span>
+          <span>낮은 가격순</span>
+          <span>높은 가격순</span>
+        </div>
+      </div>
+
+      <div class="selected-categories-wrapper">
+        <div class="selected-categories"></div>
+      </div>
+
+      <!-- 상품 영역 -->
+      <div class="product-list">
+        {% for product in products %}
+        <div class="product-card">
+          <a href="product/{{product.id}}">
+            {% load static %}
+            <img
+              src="{% static 'assets/product-img.png' %}"
+              alt="상품 이미지"
+            />
+            <button class="cart-button">
+              <img
+                src="{% static 'assets/icons/cart.svg' %}"
+                alt="장바구니 아이콘"
+                class="icon"
+              />
+              담기
+            </button>
+            <div class="product-info">
+              <p class="delivery">샛별배송</p>
+              <p class="product-name">{{product.name}}</p>
+              <p class="product-desc">{{product.description}}</p>
+              <p class="origin-price">{{product.origin_price}}원</p>
+              <p class="discount">
+                <span>{{product.discount_rate}}%</span>
+                {{product.discount_price}}원
+              </p>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
-<!-- 데이터 사용 예시 -->
-
-<!-- js 파일 -->
 <script src="{% static 'js/main/main_page.js'%}"></script>
 {% endblock %}

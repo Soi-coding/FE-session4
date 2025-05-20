@@ -2,22 +2,59 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/main/product_detail_page.css'%}"
+  href="{% static 'css/main/product_detail_page.css' %}"
 />
 
-<!-- 코드 작성시, 아래 부분(endblock 이전)은 전체 삭제하고 작성하세요 -->
+<div class="product-detail-container">
+  <!-- 왼쪽: 상품 이미지 -->
+  <div class="product-image-container"></div>
 
-<!----------------tip!---------------->
-<!-- 상품 데이터베이스는 프로젝트에 넣어뒀어요 -->
-<!-- 아래와 같은 형식으로 사용하세요 -->
+  <!-- 오른쪽: 상품 정보 -->
+  <div class="product-info-panel">
+    <div class="product-info-panel-2">
+      <p class="delivery-type">샛별배송</p>
+      <h1 class="product-title">{{ product.name }}</h1>
 
-<!-- 데이터 사용 예시 -->
-<img src="{{product.image_url}}" style="width: 100px" />
-<p>{{product.name}}</p>
-<p>{{product.discount_rate}}%</p>
-<p>{{product.discount_price}} 원</p>
-<p>{{product.notice}}</p>
-<!-- 데이터 사용 예시 -->
+      <div class="discount-info">
+        <p class="discount-rate">{{ product.discount_rate }}%</p>
+        <p class="discount-price">{{ product.discount_price }} 원</p>
+      </div>
 
-<script src="{% static 'js/main/product_detail_page.js'%}"></script>
+      <div class="line"></div>
+
+      <div class="notice-section">
+        <p class="notice-label">안내 사항</p>
+        <p class="notice-text">{{ product.notice }}</p>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="select-section">
+        <p class="select-label">상품 선택</p>
+        <div class="select-option">
+          <p class="select-option-name">{{ product.name }}</p>
+          <div class="quantity-control">
+            <button class="quantity-minus">-</button>
+            <span id="quantity-value" class="button-number">1</span>
+            <button class="quantity-plus">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="payment-summary">
+      <div class="total-price-area">
+        <p class="total">총 상품 금액:</p>
+        <p class="total-price">
+          <span id="total-price">{{ product.discount_price }}</span> 원
+        </p>
+      </div>
+      <button class="login-btn">로그인</button>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/main/product_detail_page.js' %}"></script>
 {% endblock %}
