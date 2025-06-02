@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const hasUpper = /[A-Z]/.test(pw);
     const hasLower = /[a-z]/.test(pw);
     const hasNumber = /[0-9]/.test(pw);
-    const hasSpecial = /[@!?\\-_]/.test(pw);
-    const onlyAllowed = /^[A-Za-z0-9@!?\\-_]+$/.test(pw);
+    const hasSpecial = /[@!?_-]/.test(pw);
+    const onlyAllowed = /^[A-Za-z0-9@!?_-]+$/.test(pw);
     return (
       minLength &&
       hasUpper &&
